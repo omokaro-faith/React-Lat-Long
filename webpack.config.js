@@ -1,16 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './client/src/app.js',
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'client', 'public'),
     filename: 'bundle.js'
   },
   module: {
     rules: [{
       loader: 'babel-loader',
       test: /\.js$/,
-      exclude: /node_modules/
+      exclude: [/node_modules/, /server/]
     }, {
       test: /\.s?css$/,
       use: [
@@ -20,8 +20,10 @@ module.exports = {
       ]
     }
   ]},
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
+  mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'client', 'public'),
+    historyApiFallback: true
   }
 };
