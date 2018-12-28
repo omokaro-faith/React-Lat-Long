@@ -12,11 +12,11 @@ const profileRoutes = require('./server/routes/profile-routes');
 require('dotenv').config();
 require('./server/config/passport-setup');
 
-const port =  3000;
+const port =  process.env.PORT || 3000;
 const app = express();
 
 app.use(cookieSession({
-  maxAge: 24 * 60 * 60 * 1000,
+  maxAge: process.env.MAX_AGE,
   keys: [process.env.COOKIE_KEY]
 }));
 
@@ -31,14 +31,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //connect to mongodb
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true}, () => {
-  console.log(`connected to mongoDB`);
-});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 const publicPath = path.join(__dirname, 'client', 'public');
 
 app.get('*', (req, res) => {
-  console.log('I got here');
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
