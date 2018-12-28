@@ -7,7 +7,9 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "start": "node app.js",
+    "heroku-postbuild": "node app.js"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -27,6 +29,24 @@
     "style-loader": "0.18.2",
     "validator": "8.0.0",
     "webpack": "3.1.0",
-    "webpack-dev-server": "2.5.1"
-  }
+    "webpack-dev-server": "2.5.1",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.1",
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
+  },
+  "description": "",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omokaro-faith/React-Lat-Long.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omokaro-faith/React-Lat-Long/issues"
+  },
+  "homepage": "https://github.com/omokaro-faith/React-Lat-Long#readme"
 }
