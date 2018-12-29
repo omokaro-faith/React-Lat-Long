@@ -1,6 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path  = require('path');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -14,6 +16,12 @@ require('./server/config/passport-setup');
 
 const port =  process.env.PORT || 3000;
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieSession({
   maxAge: process.env.MAX_AGE,
@@ -35,7 +43,7 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 const publicPath = path.join(__dirname, 'client', 'public');
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 

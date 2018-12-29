@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { googleLogin } from '../actions/auth';
+import { getUsers }  from '../actions/users';
 
-const Login = () => (
-  <p>This is the Login page</p>
-)
+class Login extends Component {
+  componentDidMount() {
+    this.props.getUsers();
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.props.googleLogin}>Login here</button>
+      </div>
+    )
+  }
+}
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  googleLogin: () => dispatch(googleLogin()),
+  getUsers: () => dispatch(getUsers())
+});
+
+export default connect(null, mapDispatchToProps)(Login);

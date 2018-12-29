@@ -18,6 +18,8 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 //callback route for google to redirect to
-router.get('/google/redirect', passport.authenticate('google'));
+router.get('/google/redirect', passport.authenticate('google'), (res) => {
+  console.log(res);
+});
 
 module.exports = router;
