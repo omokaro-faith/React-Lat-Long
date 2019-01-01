@@ -4,6 +4,11 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: $m-size;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 button {
@@ -16,4 +21,56 @@ button:disabled {
 
 .is-active {
   font-weight: bold;
+}
+
+#navbarCustom {
+  min-height: $navbar-height;
+
+  #logo {
+    color: #6497b1;
+    font-size: $navbar-logo-size;
+    font-family: 'Major Mono Display', monospace;
+  }
+  #user-welcome-message {
+    font-family: monospace;
+    font-size: $nav-message-size;
+    margin-left: $s-size;
+    color:rgb(204, 5, 5);
+  }
+}
+
+.tada {
+  border-radius: 6px;
+  box-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0 0 1px hsla(0,0%,4%,.1);
+  color: #4a4a4a;
+  display: block;
+  width: 29rem;
+  margin: 0 0 0 28rem;
+  background-color: #f5f5f5;
+
+  #login-btn {
+    background-color: #DD4B39;
+    color: #fff;
+    font-family: monospace;
+    margin-left: 6rem;
+  
+    :hover {
+      color: #6497b1;
+    }
+  }
+}
+
+.loaderItem {
+  margin: 20rem 0 0 42rem;
+}
+
+.info-window-text {
+  font-family: monospace;
+  font-size: 1rem;
+  margin-left: $s-size;
+
+  h2 {
+    font-size: 1.3rem;
+    color:rgb(204, 5, 5);
+  }
 }

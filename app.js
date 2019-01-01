@@ -31,7 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //connect to mongodb
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
+// mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 const publicPath = path.join(__dirname, 'client', 'public');
 
