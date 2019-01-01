@@ -8,7 +8,6 @@ import AppRoute from './routers/AppRoute';
 const store = configureStore();
 
 const state = store.getState();
-console.log(state);
 
 const ConnectApp = (
   <Provider store={store}>
@@ -17,4 +16,3 @@ const ConnectApp = (
 )
 
 ReactDOM.render(ConnectApp, document.getElementById('app'));
-

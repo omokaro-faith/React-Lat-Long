@@ -1,17 +1,12 @@
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import users from '../reducers/users';
 
 
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return state.concat([action.text])
-    default:
-      return state
-  }
-}
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
  // Store creation
  export default () => {
-  const store = createStore(todos)
+  const store = createStore(users, composeEnhancers(applyMiddleware(thunk)))
   return store;
 }
