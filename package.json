@@ -9,7 +9,8 @@
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "start:dev": "nodemon app.js",
-    "heroku-postbuild": "node app.js"
+    "heroku-postbuild": "node app.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -29,6 +30,7 @@
     "firebase": "^5.7.2",
     "google-maps-react": "^2.0.2",
     "history": "^4.7.2",
+    "jest": "^23.6.0",
     "node-sass": "4.5.3",
     "normalize.css": "8.0.1",
     "react": "16.7.0",
