@@ -7,7 +7,6 @@ import { getUsers }  from '../actions/users';
 class Dashboard extends Component {
   state = {
     showingInfoWindow: false,
-    isLoading: true,
     activeMarker: {},
     selectedPlace: {},
     user: {
@@ -31,11 +30,11 @@ class Dashboard extends Component {
     });
   }
 
-  componentDidMount() {
+  componentDidMount(props, state) {
     this.props.getUsers();
   }
 
-  onMouseoutMarker = (e) => {
+  onMouseoutMarker = () => {
     const { showingInfoWindow } = this.state;
     if (showingInfoWindow) {
       this.setState({
@@ -58,8 +57,7 @@ class Dashboard extends Component {
       user
     } = this.state;
     const {
-      users,
-      isLoading
+      users
     } = this.props;
     return (
       <GoogleApiWrapper
@@ -80,8 +78,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  users: state.users,
-  isLoading: state.isLoading
+  users: state.users.users
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
