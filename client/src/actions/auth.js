@@ -57,5 +57,3 @@ export const Login = ({ uid, displayName, photoURL}) => ({
 export const Logout = () => ({
   type: 'LOGOUT'
 });
-
-
