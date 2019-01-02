@@ -1,21 +1,13 @@
 import React, { Fragment } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker, Polyline } from 'google-maps-react';
 import Loader from 'react-loader-spinner'
+import LoadingContainer from './LoadingContainer';
 
-const LoadingContainer = (props) => (
-  <div className="loaderItem">
-    <Loader
-      type="ThreeDots"
-      color="#6497b1"
-      height="100"	
-      width="100"
-    />
-  </div>
-)
 
 const mapStyles = {
   width: '100%',
-  height: '100%'
+  height: '100%',
+  top: '5px'
 };
 
 export const MapContainer = (props) => {
@@ -71,6 +63,6 @@ MapContainer.defaultProps = {
 };
 
 export default GoogleApiWrapper({
-  apiKey: '',
+  apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   LoadingContainer
 })(MapContainer);
