@@ -22,3 +22,26 @@ exports[`should render Header Successfully 1`] = `
   </div>
 </nav>
 `;
+
+exports[`should render Header correctly 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-fixed-top is-light"
+  id="navbarCustom"
+  role="navigation"
+>
+  <div
+    className="navbar-brand"
+  >
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="navbar-item"
+      id="logo"
+      to="/dashboard"
+    >
+      latLang
+    </NavLink>
+  </div>
+</nav>
+`;
