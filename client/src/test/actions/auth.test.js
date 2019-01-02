@@ -10,9 +10,7 @@ test('should login user', () => {
   const action = Login(auth);
   expect(action).toEqual({
     type: 'LOGIN',
-    uid: 'secret number',
-    displayName: 'My name',
-    photoURL: 'someurlstring'
+    ...auth
   });
 });
 
