@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { firebase } from './firebase/firebase';
 import '../styles/styles.scss';
+import "react-bulma-components/full";
 import configureStore from './store/configureStore';
 import AppRoute, { history }from './routers/AppRoute';
 import LoadingContainer from '../src/components/LoadingContainer';

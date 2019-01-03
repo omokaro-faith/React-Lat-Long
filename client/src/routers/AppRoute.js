@@ -4,7 +4,6 @@ import { Router, Route, Switch } from 'react-router-dom';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute  from './PublicRoute';
-import Header from '../components/Header';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
 import NotFoundPage from '../components/NotFoundPage';

@@ -15,7 +15,7 @@ class Dashboard extends Component {
       }
   };
 
-  onMouseoverMarker = (props, marker, e) => {
+  onMouseoverMarker = (props, marker) => {
     const { users } = this.props;
     const { position } = props;
     users.filter((user) => {
