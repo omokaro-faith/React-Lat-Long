@@ -1,4 +1,10 @@
 // colors
+$defualt-teal: #6497b1;
+$defualt-red: rgb(204, 5, 5);
+$btn-red: #DD4B39;
+$default-grey: #f5f5f5;
+$default-white: #ffffff;
+
 
 // spacing
 $m-size: 1.6rem;
@@ -8,11 +14,10 @@ $s-size: 2rem;
 $desktop-breakpoint: 45rem;
 $navbar-height: 5.25rem;
 $navbar-logo-size: 2.6rem;
-$nav-message-size: 1.2rem;
 
-$base-spacing-unit: 24px;
-$half-spacing-unit: 12px;
-$border-radius-global: 5px;
-$button-width: auto;
-$button-height: 50px;
-$button-text-color: white;
+
+//font-size 
+$default-font: 62.5%;
+
+//font-family
+$default-family: monospace;

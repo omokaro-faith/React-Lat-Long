@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from "react-bulma-components/full";
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
 
@@ -21,9 +20,9 @@ export class Login extends Component {
     const { disable } = this.state;
     return(
     <div className="container">
-      <div className="tada">
-        <img id="ome" src={require('../../images/btn-picture.jpg')} width="100%" height="100%"/>
-        <button id="login-btn" className="button is-medium" onClick={ this.Login } disabled={ disable }><span>Login With Google</span></button>
+      <div>
+        <img id="container__image" src={require('../../images/btn-picture.jpg')} width="100%" height="100%"/>
+        <button className="button is-medium" onClick={ this.Login } disabled={ disable }><span>Login With Google</span></button>
       </div>
     </div>
     )

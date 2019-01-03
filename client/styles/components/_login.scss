@@ -1,0 +1,23 @@
+.container > div {
+  border-radius: 6px;
+  box-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0 0 1px hsla(0,0%,4%,.1);
+  display: block;
+  width: 29rem;
+  margin: 0 0 0 29rem;
+  background-color: $default-grey;
+
+  .button {
+    background-color: $btn-red;
+    color: $default-white;
+    font-family: $default-family;
+    margin-left: 7rem;
+    :hover {
+      color: $defualt-teal;
+    }
+  }
+
+  #container__image {
+    height: 22rem;
+  }
+}
+

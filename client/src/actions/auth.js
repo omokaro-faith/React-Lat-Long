@@ -13,6 +13,14 @@ export const startLogin = () => {
           position: "top-right",
         });
       }
+    }).catch((e) => {
+      toast({
+        message: 'An error occured. Please try again',
+        type: "is-danger",
+        dismissible: true,
+        duration: 7000,
+        position: "top-right",
+      });
     });
   };
 };
@@ -27,7 +35,15 @@ export const startLogout = () => {
         duration: 3000,
         position: "top-right",
       });
-    })
+    }).catch((e) => {
+      toast({
+        message: `An error occured. Please try again`,
+        type: "is-danger",
+        dismissible: true,
+        duration: 3000,
+        position: "top-right",
+      });
+    });
   };
 };
 
