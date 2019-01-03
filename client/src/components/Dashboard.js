@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import Loader from 'react-loader-spinner';
 import GoogleApiWrapper from './MapWrapper';
 import { getUsers }  from '../actions/users';
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   state = {
     showingInfoWindow: false,
     activeMarker: {},
