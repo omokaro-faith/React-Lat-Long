@@ -5,9 +5,5 @@
   ],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
-  ],
-
-  "transform": {
-    "^.+\\.jsx?$": "./conk.js"
-  }
+  ]
 }

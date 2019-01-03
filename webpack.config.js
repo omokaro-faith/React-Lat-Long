@@ -11,9 +11,6 @@ module.exports = {
   module: {
     rules: [{
       loader: 'babel-loader',
-      options: {
-        rootMode: "upward",
-      }
       test: /\.js$/,
       exclude: [/node_modules/, /server/]
     }, {
