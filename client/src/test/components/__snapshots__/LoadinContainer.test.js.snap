@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LoadingContainer 1`] = `
+<div
+  className="loader-item"
+>
+  <Loader
+    color="#6497b1"
+    height="100"
+    type="ThreeDots"
+    width="100"
+  />
+</div>
+`;

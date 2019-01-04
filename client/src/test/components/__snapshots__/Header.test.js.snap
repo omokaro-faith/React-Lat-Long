@@ -1,28 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Header Successfully 1`] = `
-<nav
-  aria-label="main navigation"
-  className="navbar is-fixed-top is-light"
-  id="navbarCustom"
-  role="navigation"
->
-  <div
-    className="navbar-brand"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="navbar-item"
-      id="logo"
-      to="/dashboard"
-    >
-      latLang
-    </NavLink>
-  </div>
-</nav>
-`;
-
 exports[`should render Header correctly 1`] = `
 <nav
   aria-label="main navigation"
@@ -37,7 +14,8 @@ exports[`should render Header correctly 1`] = `
       activeClassName="active"
       aria-current="page"
       className="navbar-item"
-      id="logo"
+      exact={true}
+      id="navbarCustom__logo"
       to="/dashboard"
     >
       latLang

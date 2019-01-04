@@ -25,5 +25,5 @@ test('should add users to store',async  () => {
       type: 'GET_USERS',
       users: expect.any(Array)
     });
-  })
+  });
 });

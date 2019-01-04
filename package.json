@@ -10,7 +10,8 @@
     "dev-server": "webpack-dev-server",
     "start:dev": "nodemon app.js",
     "heroku-postbuild": "node app.js",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "coveralls": "yarn run test --coverage && cat ./client/src/tests/coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "axios": "^0.18.0",

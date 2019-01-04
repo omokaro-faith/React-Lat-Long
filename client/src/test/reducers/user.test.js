@@ -1,9 +1,8 @@
-import usersReducer from '../../reducers/auth';
+import usersReducer from '../../reducers/users';
 import users from '../fixtures/users';
 
 test('should set up default values', () => {
   const state = usersReducer(undefined, {type: '@@INIT'});
-
   expect(state).toEqual({});
 });
 

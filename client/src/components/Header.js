@@ -24,13 +24,9 @@ export class Header extends Component {
 }
 
 
-const mapDispatchToProps = (dispatch) => ({
-  startLogout: () => dispatch(startLogout())
-});
-
 const mapStateToProps = (state) => ({
   displayName: state.auth.displayName,
   photoURL: state.auth.photoURL
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, {startLogout})(Header);

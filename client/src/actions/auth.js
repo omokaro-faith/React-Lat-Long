@@ -1,6 +1,10 @@
+import configureStore from '../store/configureStore';
 import googleAuthProvider, { firebase } from '../firebase/firebase';
 import { toast 
 } from "bulma-toast";
+
+const store = configureStore();
+
 export const startLogin = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider).then((args) => {
@@ -14,36 +18,15 @@ export const startLogin = () => {
         });
       }
     }).catch((e) => {
-      toast({
-        message: 'An error occured. Please try again',
-        type: "is-danger",
-        dismissible: true,
-        duration: 7000,
-        position: "top-right",
-      });
+      return;
     });
   };
 };
 
+
 export const startLogout = () => {
   return () => {
-    return firebase.auth().signOut().then(() => {
-      toast({
-        message: `Successfully logged out from LatLang`,
-        type: "is-info",
-        dismissible: true,
-        duration: 3000,
-        position: "top-right",
-      });
-    }).catch((e) => {
-      toast({
-        message: `An error occured. Please try again`,
-        type: "is-danger",
-        dismissible: true,
-        duration: 3000,
-        position: "top-right",
-      });
-    });
+    return firebase.auth().signOut();
   };
 };
 
@@ -57,3 +40,4 @@ export const Login = ({ uid, displayName, photoURL}) => ({
 export const Logout = () => ({
   type: 'LOGOUT'
 });
+
