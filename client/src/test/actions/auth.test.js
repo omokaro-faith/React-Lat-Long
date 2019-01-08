@@ -1,7 +1,5 @@
 import { Login, Logout, startLogin, startLogout } from '../../actions/auth';
 import configureMockStore from 'redux-mock-store';
-import { toast 
-} from "bulma-toast";
 import thunk from 'redux-thunk';
 
 const createMockStore = configureMockStore([thunk]);
