@@ -14,5 +14,7 @@
   "transformIgnorePatterns": [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
     "^.+\\.module\\.(css|sass|scss)$"
-  ]
+  ],
+  "testEnvironment": "jsdom",
+  "testURL": "http://localhost"
 }

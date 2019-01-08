@@ -1,32 +1,34 @@
-import configureStore from '../store/configureStore';
+import toastr from 'toastr';
 import googleAuthProvider, { firebase } from '../firebase/firebase';
-import { toast 
-} from "bulma-toast";
 
-const store = configureStore();
+const options = {
+  "closeButton": true,
+  "debug": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": true,
+  "showDuration": "300"
+}
 
 export const startLogin = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider).then((args) => {
       if(args.operationType === 'signIn') {
-        toast({
-          message: `Welcome ${args.user.displayName}`,
-          type: "is-info",
-          dismissible: true,
-          duration: 7000,
-          position: "top-right",
-        });
+        toastr.success(`Welcome ${args.user.displayName}.`, options );
       }
     }).catch((e) => {
-      return;
+      toastr.error(`An error occured. Please try again later.`, options );
     });
   };
 };
 
 
+
 export const startLogout = () => {
   return () => {
-    return firebase.auth().signOut();
+    return firebase.auth().signOut().then(() => {
+      toastr.success(`Successfully logged out of Latlang.`, options );
+    });
   };
 };
 
