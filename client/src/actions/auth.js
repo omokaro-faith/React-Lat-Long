@@ -13,9 +13,7 @@ const options = {
 export const startLogin = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider).then((args) => {
-      if(args.operationType === 'signIn') {
         toastr.success(`Welcome ${args.user.displayName}.`, options );
-      }
     }).catch((e) => {
       toastr.error(`An error occured. Please try again later.`, options );
     });

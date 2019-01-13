@@ -14,7 +14,7 @@ export class Dashboard extends Component {
       }
   };
 
-  onMouseoverMarker = (props, marker) => {
+  onClickMarker = (props, marker) => {
     const { users } = this.props;
     const { position } = props;
     users.filter((user) => {
@@ -33,7 +33,7 @@ export class Dashboard extends Component {
     this.props.getUsers();
   }
 
-  onMouseoutMarker = () => {
+  onCloseWindow = () => {
     const { showingInfoWindow } = this.state;
     if (showingInfoWindow) {
       this.setState({
@@ -63,9 +63,9 @@ export class Dashboard extends Component {
         showingInfoWindow={showingInfoWindow}
         activeMarker={activeMarker}
         selectedPlace={selectedPlace}
-        onMouseoverMarker={this.onMouseoverMarker}
+        onClickMarker={this.onClickMarker}
         users={users}
-        onMouseoutMarker={this.onMouseoutMarker}
+        onCloseWindow={this.onCloseWindow}
         perUserDetails={user}
       />
     )

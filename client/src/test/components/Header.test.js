@@ -19,10 +19,6 @@ test('should not render Header with users photo if user is not logged in', () =>
 });
 
 test('should handle user logout', () => {
-  const initialState = {
-    lastRolledNumber: 1
-};
-
   const startLogout = jest.fn();
   const history = { push: jest.fn() };
   const wrapper = shallow(<Header 

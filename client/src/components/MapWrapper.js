@@ -13,8 +13,8 @@ const mapStyles = {
 export const MapContainer = (props) => {
   const {
     users,
-    onMouseoverMarker,
-    onMouseoutMarker,
+    onClickMarker,
+    onCloseWindow,
     activeMarker,
     showingInfoWindow,
     perUserDetails,
@@ -24,9 +24,8 @@ export const MapContainer = (props) => {
     return users.map((user) => {
       return (<Marker
         key={user.id}
-        onMouseover={onMouseoverMarker}
+        onClick={onClickMarker}
         position={user.address.geo}
-        onMouseout={onMouseoutMarker}
       />)
     })
   }
@@ -34,6 +33,7 @@ export const MapContainer = (props) => {
     return (<InfoWindow
       marker={activeMarker}
       visible={showingInfoWindow}
+      onClose={onCloseWindow}
       >
       <div className="info-window-text">
         <h2>{perUserDetails.name}</h2>
